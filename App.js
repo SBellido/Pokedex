@@ -7,7 +7,7 @@ export default function App() {
     <View style={styles.container}>
       <Text>Bienvenido a Idun</Text>
       <Hello firstname="Perico" lastname="García"/>
-      <Hello firstname={undefined} lastname={undefined}/>
+      {/* <Hello /> */}
       <LoginForm />
       {/* <StatusBar style="auto" /> */}
     </View>
