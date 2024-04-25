@@ -6,9 +6,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Bienvenido a Idun</Text>
-      <Hello name="Sebastián"/>
-      <Hello name="Paco"/>
-      <Hello name="Perico"/>
+      <Hello firstname="Perico" lastname="García"/>
+      <Hello firstname={undefined} lastname={undefined}/>
       <LoginForm />
       {/* <StatusBar style="auto" /> */}
     </View>
