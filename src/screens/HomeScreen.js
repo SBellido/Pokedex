@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, Button } from 'react-native'
+import { Text, Button, SafeAreaView } from 'react-native'
 
 export default function HomeScreen(props) {
   const { navigation } = props;
@@ -9,7 +9,7 @@ export default function HomeScreen(props) {
   }
 
   return (
-    <View>
+    <SafeAreaView>
       <Text> Estamos en HomeScreen </Text>
       <Text> Estamos en HomeScreen </Text>
       <Text> Estamos en HomeScreen </Text>
@@ -19,6 +19,6 @@ export default function HomeScreen(props) {
       <Text> Estamos en HomeScreen </Text>
       <Text> Estamos en HomeScreen </Text>
       <Button onPress={goToSettings} title='Configuración'/>
-    </View>
+    </SafeAreaView>
   )
 }
