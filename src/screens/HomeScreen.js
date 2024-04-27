@@ -10,14 +10,7 @@ export default function HomeScreen(props) {
 
   return (
     <SafeAreaView>
-      <Text> Estamos en HomeScreen </Text>
-      <Text> Estamos en HomeScreen </Text>
-      <Text> Estamos en HomeScreen </Text>
-      <Text> Estamos en HomeScreen </Text>
-      <Text> Estamos en HomeScreen </Text>
-      <Text> Estamos en HomeScreen </Text>
-      <Text> Estamos en HomeScreen </Text>
-      <Text> Estamos en HomeScreen </Text>
+      <Text> HOME </Text>
       <Button onPress={goToSettings} title='Configuración'/>
     </SafeAreaView>
   )

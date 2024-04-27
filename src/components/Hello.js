@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, SafeAreaView } from 'react-native';
 import PropTypes from "prop-types";
 
 export default function Hello(props) {
@@ -7,11 +7,11 @@ export default function Hello(props) {
    const { firstname, lastname } = props;
 
     return (
-      <View>
+      <SafeAreaView>
         <Text> 
           Hola {firstname} {lastname}
         </Text>
-      </View>
+      </SafeAreaView>
     );
 }
 
