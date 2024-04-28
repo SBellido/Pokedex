@@ -5,13 +5,14 @@ import Icon from "react-native-vector-icons/FontAwesome5";
 import ChallengeScreen from "../screens/ChallengeScreen";
 import InstructionsScreen from "../screens/InstructionsScreen";
 import AchievementsScreen from "../screens/AchievementsScreen";
+import PokedexScreen from "../screens/PokedexScreen";
 
 const Tab = createBottomTabNavigator();
 
 export default function Navigation() {
   return (
     <Tab.Navigator>
-      <Tab.Screen 
+      {/* <Tab.Screen 
         name="Challenge" 
         component={ChallengeScreen} 
         options={{
@@ -20,6 +21,18 @@ export default function Navigation() {
             <Icon name="arm" color={color} size={size} />
           ),
           headerTitle:"Desafío"
+        }}
+      /> */}
+      
+      <Tab.Screen 
+        name="Pokedex" 
+        component={PokedexScreen} 
+        options={{
+          tabBarLabel: "Pokemon",
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="user" color={color} size={size} />
+          ),
+          headerTitle:"Pokedex"
         }}
       />
 
@@ -39,7 +52,7 @@ export default function Navigation() {
         options={{
           tabBarLabel: "Logros",
           tabBarIcon: ({ color, size }) => (
-            <Icon name="cup" color={color} size={size} />
+            <Icon name="heart" color={color} size={size} />
           ),
           headerTitle:"Logros"
         }}
