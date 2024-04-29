@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Text, SafeAreaView } from 'react-native'
+import { SafeAreaView } from 'react-native'
 import { getPokemnosApi, getPokemonDetailsByUrlApi } from "../api/pokemon";
+import PokemonList from '../components/PokemonList';
 
 export default function Pokedex() {
   const [pokemons, setPokemons] = useState([]);
@@ -33,7 +34,6 @@ const loadPokemon = async () => {
 
     /* añade todo lo nuevo sumado a lo que ya existía */
     setPokemons([...pokemons, ...pokemonsArray]);
-    console.log(pokemonsArray);
   } catch (error) {
     console.log(error);
   }
@@ -41,7 +41,7 @@ const loadPokemon = async () => {
 
   return (
     <SafeAreaView>
-      <Text> POKEDEX </Text>
+      <PokemonList pokemons={pokemons}/>
     </SafeAreaView>
   )
 }
