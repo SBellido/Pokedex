@@ -3,11 +3,11 @@ import { FlatList, StyleSheet, ActivityIndicator } from 'react-native'
 import PokemonCard from "./PokemonCard";
 
 export default function PokemonList(props) {
-  const { pokemons, loadPokemon,isNext } = props;
+  const { pokemons, loadPokemons,isNext } = props;
 
-const loadMore = () => {
-  loadPokemon();
-}
+  const loadMore = () => {
+    loadPokemons();
+  }
 
   return (
     <FlatList 

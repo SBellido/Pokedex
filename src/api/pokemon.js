@@ -4,7 +4,7 @@ import { API_HOST } from "../utils/constans";
 construye la url
 ejecuta la petición HTTP al servidor
 formatea los datos obtenido en un JSON y lo retorna */
-export async function getPokemnosApi(endpointUrl) {
+export async function getPokemonsApi(endpointUrl) {
   console.log("endpointUrl: ",endpointUrl);
   try {
     const url = `${API_HOST}/pokemon?limit=20&offset=0`;

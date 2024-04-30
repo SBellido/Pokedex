@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { SafeAreaView } from 'react-native'
-import { getPokemnosApi, getPokemonDetailsByUrlApi } from "../api/pokemon";
+import React, { useState, useEffect } from 'react';
+import { SafeAreaView } from 'react-native';
+import { getPokemonsApi, getPokemonDetailsByUrlApi } from "../api/pokemon";
+
 import PokemonList from '../components/PokemonList';
 
 export default function Pokedex() {
@@ -11,15 +12,15 @@ export default function Pokedex() {
     /* función anónima autoejecutable, espera a
     cargar todos lo pokemon y despues se ejecuta */ 
     (async () => {
-      await loadPokemon();
+      await loadPokemons();
     })();
-  }, [])
+  }, []);
 
 
 
-const loadPokemon = async () => {
+const loadPokemons = async () => {
   try {
-    const response = await getPokemnosApi(nextUrl);
+    const response = await getPokemonsApi(nextUrl);
     setNextUrl(response.next);
 
     const pokemonsArray = [];
@@ -46,7 +47,7 @@ const loadPokemon = async () => {
     <SafeAreaView>
       <PokemonList 
         pokemons={pokemons} 
-        loadPokemon={loadPokemon}
+        loadPokemons={loadPokemons}
         isNext={nextUrl}
       />
     </SafeAreaView>
