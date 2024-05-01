@@ -6,11 +6,7 @@ import getColorByPokemonType from '../../utils/getColorByPokemonType';
 export default function Header(props) {
   const {name, order, image, type} = props; 
   const color = getColorByPokemonType(type);
-
   const bgStyles = [{ backgroundColor: color, ...styles.bg }]
-
-
-  console.log("Desde header: ",props);
 
   return (
     <>
