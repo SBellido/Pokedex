@@ -1,72 +1,128 @@
+
 import React from "react";
-import { Image } from "react-native"; 
+import { Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/FontAwesome5";
-import ChallengeScreen from "../screens/ChallengeScreen";
-import InstructionsScreen from "../screens/InstructionsScreen";
-import AchievementsScreen from "../screens/AchievementsScreen";
-import PokedexScreen from "../screens/PokedexScreen";
+import FavoriteNavigation from "./FavoriteNavigation";
+import PokedexNavigation from "./PokedexNavigation";
+import AccountNavigation from "./AccountNavigation";
 
 const Tab = createBottomTabNavigator();
 
 export default function Navigation() {
   return (
     <Tab.Navigator>
-      {/* <Tab.Screen 
-        name="Challenge" 
-        component={ChallengeScreen} 
+      <Tab.Screen
+        name="Favoritos"
+        component={FavoriteNavigation}
         options={{
-          tabBarLabel: "Desafío",
-          tabBarIcon: ({ color, size }) => (
-            <Icon name="arm" color={color} size={size} />
-          ),
-          headerTitle:"Desafío"
-        }}
-      /> */}
-      
-      <Tab.Screen 
-        name="Pokedex" 
-        component={PokedexScreen} 
-        options={{
-          tabBarLabel: "Pokemon",
-          tabBarIcon: ({ color, size }) => (
-            <Icon name="user" color={color} size={size} />
-          ),
-          title:"", headerTransparent: true,
-        }}
-      />
-
-      <Tab.Screen 
-        name="Instructions" 
-        component={InstructionsScreen} 
-        options={{
-          tabBarLabel: "",
-          tabBarIcon: () => renderIdunIcon(),
-          headerTitle:"Instrucciones"
-        }}
-      />
-
-      <Tab.Screen 
-        name="Achievements" 
-        component={AchievementsScreen} 
-        options={{
-          tabBarLabel: "Logros",
+          tabBarLabel: "Favoritos",
           tabBarIcon: ({ color, size }) => (
             <Icon name="heart" color={color} size={size} />
           ),
-          headerTitle:"Logros"
+        }}
+      />
+
+      <Tab.Screen
+        name="Pokedex"
+        component={PokedexNavigation}
+        options={{
+          tabBarLabel: "",
+          tabBarIcon: () => renderPokeball(),
+        }}
+      />
+
+      <Tab.Screen
+        name="Mi Cuenta"
+        component={AccountNavigation}
+        options={{
+          tabBarLabel: "Mi Cuenta",
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="user" color={color} size={size} />
+          ),
         }}
       />
     </Tab.Navigator>
-  )
+  );
 }
 
-
-function renderIdunIcon() {
+function renderPokeball() {
   return (
-    <Image 
-      source={require('../assests/idun_icon.png')}
-      style={{ width: 75, height: 90, top: -20 }}
+    <Image
+      source={require("../assets/pokeball.png")}
+      style={{ width: 75, height: 75, top: -15 }}
     />
-  )
+  );
 }
+// import React from "react";
+// import { Image } from "react-native"; 
+// import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+// import Icon from "react-native-vector-icons/FontAwesome5";
+// import ChallengeScreen from "../screens/ChallengeScreen";
+// import InstructionsScreen from "../screens/InstructionsScreen";
+// import AchievementsScreen from "../screens/AchievementsScreen";
+// import PokedexScreen from "../screens/PokedexScreen";
+
+// const Tab = createBottomTabNavigator();
+
+// export default function Navigation() {
+//   return (
+//     <Tab.Navigator>
+//       {/* <Tab.Screen 
+//         name="Challenge" 
+//         component={ChallengeScreen} 
+//         options={{
+//           tabBarLabel: "Desafío",
+//           tabBarIcon: ({ color, size }) => (
+//             <Icon name="arm" color={color} size={size} />
+//           ),
+//           headerTitle:"Desafío"
+//         }}
+//       /> */}
+      
+//       <Tab.Screen 
+//         name="Pokedex" 
+//         component={PokedexScreen} 
+//         options={{
+//           tabBarLabel: "Pokemon",
+//           tabBarIcon: ({ color, size }) => (
+//             <Icon name="user" color={color} size={size} />
+//           ),
+//           title:"", headerTransparent: true,
+//         }}
+//       />
+
+//       <Tab.Screen 
+//         name="Instructions" 
+//         component={InstructionsScreen} 
+//         options={{
+//           tabBarLabel: "",
+//           tabBarIcon: () => renderIdunIcon(),
+//           headerTitle:"Instrucciones"
+//         }}
+//       />
+
+//       <Tab.Screen 
+//         name="Achievements" 
+//         component={AchievementsScreen} 
+//         options={{
+//           tabBarLabel: "Logros",
+//           tabBarIcon: ({ color, size }) => (
+//             <Icon name="heart" color={color} size={size} />
+//           ),
+//           headerTitle:"Logros"
+//         }}
+//       />
+//     </Tab.Navigator>
+//   )
+// }
+
+
+// function renderIdunIcon() {
+//   return (
+//     <Image 
+//       source={require('../assests/idun_icon.png')}
+//       style={{ width: 75, height: 90, top: -20 }}
+//     />
+//   )
+// }
