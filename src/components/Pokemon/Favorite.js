@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
-
 import {
   addPokemonFavoritesApi,
   isPokemonFavoriteApi,
+  removePokemonFavoriteApi,
 } from "../../api/favorite";
 
 export default function Favorite(props) {
@@ -35,12 +35,17 @@ export default function Favorite(props) {
       await addPokemonFavoritesApi(id);
       onReloadCheckFavorite();
     } catch (error) {
-      throw error;
+      console.log(error);
     }
   };
 
-  const removeFavorite = () => {
-    console.log("Eliminar de favoritos");
+  const removeFavorite = async () => {
+    try {
+      await removePokemonFavoriteApi(id);
+      onReloadCheckFavorite();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

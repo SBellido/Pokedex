@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { SafeAreaView } from 'react-native';
+import React, { useState, useEffect } from "react";
+import { SafeAreaView } from "react-native";
 import { getPokemonsApi, getPokemonDetailsByUrlApi } from "../api/pokemon";
 
-import PokemonList from '../components/PokemonList';
+import PokemonList from "../components/PokemonList";
 
 export default function Pokedex() {
   const [pokemons, setPokemons] = useState([]);
@@ -10,7 +10,7 @@ export default function Pokedex() {
 
   useEffect(() => {
     /* función anónima autoejecutable, espera a
-    cargar todos lo pokemon y despues se ejecuta */ 
+    cargar todos lo pokemon y despues se ejecuta */
     (async () => {
       await loadPokemons();
     })();
@@ -30,25 +30,26 @@ export default function Pokedex() {
           name: pokemonDetails.name,
           type: pokemonDetails.types[0].type.name,
           order: pokemonDetails.order,
-          imagen: pokemonDetails.sprites.other['official-artwork'].front_default
+          imagen:
+            pokemonDetails.sprites.other["official-artwork"].front_default,
         });
       }
 
       /* añade todo lo nuevo sumado a lo que ya existía */
-      setPokemons(prevPokemons => [...prevPokemons, ...pokemonsArray]);
+      setPokemons((prevPokemons) => [...prevPokemons, ...pokemonsArray]);
       // setPokemons([...pokemons, ...pokemonsArray]);
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
     <SafeAreaView>
-      <PokemonList 
-        pokemons={pokemons} 
+      <PokemonList
+        pokemons={pokemons}
         loadPokemons={loadPokemons}
         isNext={nextUrl}
       />
     </SafeAreaView>
-  )
+  );
 }
