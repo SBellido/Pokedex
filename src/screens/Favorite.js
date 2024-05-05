@@ -1,9 +1,10 @@
 import React, { useState, useCallback } from "react";
 import { Text } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
-import { getPokemonFavoriteApi } from "../api/favorite";
+import { getPokemonsFavoriteApi } from "../api/favorite";
 import { getPokemonDetailsApi } from "../api/pokemon";
 import useAuth from "../hooks/useAuth";
+import NoLoggued from "../components/NoLoggued";
 import PokemonList from "../components/PokemonList";
 
 export default function Favorite() {
@@ -14,7 +15,7 @@ export default function Favorite() {
     useCallback(() => {
       if (auth) {
         (async () => {
-          const response = await getPokemonFavoriteApi();
+          const response = await getPokemonsFavoriteApi();
 
           const pokemonsArray = [];
           for await (const id of response) {
@@ -36,9 +37,5 @@ export default function Favorite() {
     }, [auth])
   );
 
-  return !auth ? (
-    <Text>usuario NO logueado</Text>
-  ) : (
-    <PokemonList pokemons={pokemons} />
-  );
+  return !auth ? <NoLoggued /> : <PokemonList pokemons={pokemons} />;
 }
