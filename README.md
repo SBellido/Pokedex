@@ -1,3 +1,39 @@
+## Inicialización del Proyecto
+
+Para inicializar el proyecto en tu entorno local, sigue estos pasos:
+
+1. Asegúrate de tener Node.js instalado en tu computadora.
+2. Clona este repositorio en tu máquina local utilizando el siguiente comando:
+
+git clone https://github.com/SBellido/Idun.git
+
+3. Navega al directorio del proyecto:
+
+cd idun
+
+4. Instala las dependencias utilizando Yarn:
+
+yarn install
+
+5. Una vez instaladas las dependencias, puedes ejecutar el proyecto utilizando Expo:
+
+yarn start
+
+Esto abrirá la interfaz de Expo en tu navegador y te proporcionará opciones para ejecutar el proyecto en un emulador, dispositivo físico o en la web.
+
+› Using Expo Go
+› Press s │ switch to development build
+
+› Press a │ open Android
+› Press w │ open web
+
+› Press j │ open debugger
+› Press r │ reload app
+› Press m │ toggle menu
+› Press o │ open project code in your editor
+
+› Press ? │ show all commands
+
 # Curso de Introducción a React Native
 
 Este repositorio contiene los proyectos desarrollados durante el curso de Introducción a React Native. En este curso, aprenderás a configurar tu entorno de trabajo local con React Native utilizando Expo, emuladores y dispositivos móviles reales. Además, repasarás los fundamentos de React.js aplicados a React Native.
