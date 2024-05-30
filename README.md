@@ -49,7 +49,6 @@ Aquí se muestran algunas capturas de pantalla de las secciones principales del 
 
 ![Captura de Pantalla 1](src/assets/image_1.png)
 ![Captura de Pantalla 2](src/assets/image_2.png)
-![Captura de Pantalla 3](src/assets/image_3.png)
 ![Captura de Pantalla 4](src/assets/image_4.png)
 ![Captura de Pantalla 5](src/assets/image_5.png)
 ![Captura de Pantalla 6](src/assets/image_6.png)
