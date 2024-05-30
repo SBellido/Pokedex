@@ -52,7 +52,7 @@ export default function LoginForm() {
         value={formik.values.password}
         onChangeText={(text) => formik.setFieldValue("password", text)}
       ></TextInput>
-      <Button title="Entrar" onPress={formik.handleSubmit} />
+      <Button style={styles.btn} title="Entrar" onPress={formik.handleSubmit} />
 
       <Text style={styles.error}>{formik.errors.username}</Text>
       <Text style={styles.error}>{formik.errors.password}</Text>
@@ -90,6 +90,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     borderRadius: 10,
+  },
+  btn: {
+    backgroundColor: "#F00",
   },
   error: {
     textAlign: "center",

@@ -34,6 +34,30 @@ Esto abrirá la interfaz de Expo en tu navegador y te proporcionará opciones pa
 
 › Press ? │ show all commands
 
+---
+
+### Nota de Acceso
+
+Para ejecutar el proyecto, es necesario iniciar sesión con las siguientes credenciales:
+
+- **Usuario:** sbellido
+- **Contraseña:** 27101979
+
+## Capturas de Pantalla
+
+Aquí se muestran algunas capturas de pantalla de las secciones principales del proyecto:
+
+![Captura de Pantalla 1](src/assets/image_1.png)
+![Captura de Pantalla 2](src/assets/image_2.png)
+![Captura de Pantalla 3](src/assets/image_3.png)
+![Captura de Pantalla 4](src/assets/image_4.png)
+![Captura de Pantalla 5](src/assets/image_5.png)
+![Captura de Pantalla 6](src/assets/image_6.png)
+
+---
+
+**Nota:** Este proyecto se llama "Idun" y se utilizará como base en Expo Go para desarrollar "Idun".
+
 # Curso de Introducción a React Native
 
 Este repositorio contiene los proyectos desarrollados durante el curso de Introducción a React Native. En este curso, aprenderás a configurar tu entorno de trabajo local con React Native utilizando Expo, emuladores y dispositivos móviles reales. Además, repasarás los fundamentos de React.js aplicados a React Native.
