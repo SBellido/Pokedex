@@ -8,6 +8,38 @@ import Stats from "../components/Pokemon/Stats";
 import Favorite from "../components/Pokemon/Favorite";
 import useAuth from "../hooks/useAuth";
 
+/*
+  Este componente representa la pantalla de detalles de un 
+  Pokemon en la aplicación.
+  Muestra información detallada sobre un Pokemon, como su nombre, 
+  imagen, tipos y estadísticas.
+
+  Props:
+    - navigation: Objeto de navegación proporcionado por React Navigation.
+    - route: Objeto de ruta proporcionado por React Navigation 
+    que contiene los parámetros de la ruta.
+
+  Estado:
+    - pokemon: Estado que almacena los detalles del Pokemon.
+
+  Hooks:
+    - useState: Utilizado para manejar el estado 
+    de los detalles del Pokemon.
+    - useEffect: Utilizado para ejecutar efectos 
+    secundarios en componentes funcionales.
+
+  Funciones:
+    - Navegación dinámica: Configura los elementos 
+    de navegación dinámicamente basándose en el estado 
+    de autenticación y los detalles del Pokemon.
+    - Carga de detalles del Pokemon: Función para 
+    cargar los detalles del Pokemon desde la API.
+
+  Uso:
+    - Este componente se utiliza en la navegación de 
+    la aplicación para representar la pantalla de detalles de un Pokemon.
+*/
+
 export default function Pokemon(props) {
   const {
     navigation,

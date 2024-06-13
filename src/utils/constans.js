@@ -1,3 +1,20 @@
+/*
+  Constantes utilizadas en la aplicación para definir 
+  el host de la API, el nombre del almacenamiento local 
+  para favoritos y los colores de los tipos de Pokemon.
+
+  - API_HOST: Host de la API de Pokédex.
+  - FAVORITE_STORAGE: Nombre del almacenamiento 
+  local para los Pokemon favoritos.
+  - POKEMON_TYPE_COLORS: Objeto que mapea los 
+  tipos de Pokemon a sus colores correspondientes.
+
+  Uso:
+    - Estas constantes se utilizan en diferentes 
+    partes de la aplicación para mantener la coherencia 
+    y facilitar la configuración y personalización.
+*/
+
 export const API_HOST = "https://pokeapi.co/api/v2";
 export const FAVORITE_STORAGE = "pokemonfav";
 export const POKEMON_TYPE_COLORS = {

@@ -7,6 +7,17 @@ import {
   removePokemonFavoriteApi,
 } from "../../api/favorite";
 
+/**
+ * Componente Favorite
+ *
+ * Este componente representa un ícono de corazón que indica si un Pokémon
+ * está marcado como favorito. Permite al usuario añadir o eliminar
+ * un Pokémon de su lista de favoritos.
+ *
+ * Props:
+ * - id: Identificador del Pokémon.
+ */
+
 export default function Favorite(props) {
   const { id } = props;
   const [isFavorite, setIsFavorite] = useState(undefined);
@@ -15,6 +26,8 @@ export default function Favorite(props) {
   console.log(isFavorite);
 
   useEffect(() => {
+    /* Verifica si el Pokémon está en la lista de favoritos 
+    al montar el componente o cuando cambia el id o reloadCheck */
     (async () => {
       try {
         const response = await isPokemonFavoriteApi(id);
@@ -25,11 +38,13 @@ export default function Favorite(props) {
     })();
   }, [id, reloadCheck]);
 
-  /* obtiene el valor y le asigna el contrario */
+  /* Función para alternar el estado de recarga,
+  obtiene el valor y le asigna el contrario */
   const onReloadCheckFavorite = () => {
     setReloadCheck((prev) => !prev);
   };
 
+  // Añade el Pokémon a la lista de favoritos
   const addFavorite = async () => {
     try {
       await addPokemonFavoritesApi(id);
@@ -39,6 +54,7 @@ export default function Favorite(props) {
     }
   };
 
+  // Elimina el Pokémon de la lista de favoritos
   const removeFavorite = async () => {
     try {
       await removePokemonFavoriteApi(id);
@@ -48,6 +64,7 @@ export default function Favorite(props) {
     }
   };
 
+  // Renderiza el ícono de corazón y gestiona el evento onPress
   return (
     <Icon
       name="heart"

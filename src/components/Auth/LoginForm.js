@@ -12,12 +12,20 @@ import * as Yup from "yup";
 import { user, userDetails } from "../../utils/userDB";
 import useAuth from "../../hooks/useAuth";
 
+/**
+ * Componente LoginForm
+ *
+ * Este componente proporciona un formulario de inicio de sesión con validación de campo y manejo de errores.
+ * Utiliza `useFormik` para gestionar el estado del formulario y la validación.
+ */
+
 export default function LoginForm() {
+  // Estado local para gestionar mensajes de error
   const [error, setError] = useState("");
+  // Hook personalizado para gestionar la autenticación
   const { login } = useAuth();
 
-  console.log(useAuth());
-
+  // Configuración del formulario usando useFormik
   const formik = useFormik({
     initialValues: initialValues(),
     validationSchema: Yup.object(validationSchema()),
@@ -26,6 +34,7 @@ export default function LoginForm() {
       setError("");
       const { username, password } = formValue;
 
+      // Validación de las credenciales de usuario
       if (username !== user.username || password !== user.password) {
         setError("El usuario o la contraseña no son correctos");
       } else {
@@ -62,6 +71,7 @@ export default function LoginForm() {
   );
 }
 
+// Función que retorna los valores iniciales del formulario
 function initialValues() {
   return {
     username: "",
@@ -69,6 +79,7 @@ function initialValues() {
   };
 }
 
+// Esquema de validación para el formulario usando Yup
 function validationSchema() {
   return {
     username: Yup.string().required("El usuario es obligatorio"),

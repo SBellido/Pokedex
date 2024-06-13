@@ -1,3 +1,32 @@
+/*
+  Este componente representa una tarjeta que muestra información 
+  básica de un Pokemon, como su número, nombre e imagen.
+  Al hacer clic en la tarjeta, el usuario es llevado a la pantalla 
+  de detalles del Pokemon.
+
+  Props:
+    - pokemon: Objeto que contiene la información del 
+    Pokemon a mostrar en la tarjeta.
+
+  Estado:
+    - Ninguno.
+
+  Hooks:
+    - useNavigation: Utilizado para acceder al objeto de navegación 
+    y poder redirigir al usuario a la pantalla de detalles del Pokemon.
+
+  Componentes:
+    - Ninguno.
+
+  Métodos:
+    - goToPokemon: Función que se activa al hacer clic en la tarjeta 
+    y que redirige al usuario a la pantalla de detalles del Pokemon.
+
+  Uso:
+    - Este componente se utiliza en la pantalla principal de la aplicación 
+    para mostrar una lista de Pokemons.
+*/
+
 import React from "react";
 import {
   StyleSheet,
@@ -14,9 +43,11 @@ export default function PokemonCard(props) {
   const { pokemon } = props;
   const navigation = useNavigation();
 
+  // Determinar el color de fondo de la tarjeta según el tipo de Pokemon.
   const pokemonColor = getColorByPokemonType(pokemon.type);
   const bgStyles = { backgroundColor: pokemonColor, ...styles.bgStyles };
 
+  // Redirigir al usuario a la pantalla de detalles del Pokemon.
   const goToPokemon = () => {
     navigation.navigate("Pokemon", { id: pokemon.id });
   };

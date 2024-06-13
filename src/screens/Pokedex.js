@@ -1,8 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { SafeAreaView } from "react-native";
 import { getPokemonsApi, getPokemonDetailsByUrlApi } from "../api/pokemon";
-
 import PokemonList from "../components/PokemonList";
+
+/*
+  Este componente representa la pantalla de la Pokédex en la aplicación.
+  Muestra una lista de Pokemons obtenidos de la API.
+
+  Estado:
+    - pokemons: Estado que almacena la lista de Pokemons.
+    - nextUrl: Estado que almacena la URL de la siguiente 
+    página de resultados de la API.
+
+  Hooks:
+    - useState: Utilizado para manejar el estado de la lista 
+    de Pokemons y la URL de la siguiente página.
+    - useEffect: Utilizado para ejecutar efectos secundarios 
+    en componentes funcionales.
+
+  Funciones:
+    - loadPokemons: Función para cargar la lista de Pokemons desde la API.
+
+  Uso:
+    - Este componente se utiliza en la navegación de 
+    la aplicación para representar la pantalla de la Pokédex.
+*/
+
 
 export default function Pokedex() {
   const [pokemons, setPokemons] = useState([]);

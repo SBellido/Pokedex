@@ -1,3 +1,18 @@
+/*
+  Este componente define la navegación principal 
+  de la aplicación utilizando createBottomTabNavigator 
+  de @react-navigation/bottom-tabs.
+  Contiene pestañas para acceder a Favoritos, 
+  Pokedex y la cuenta del usuario.
+
+  Componentes:
+    - Tab.Navigator: Componente que representa la navegación de pestañas.
+    - Tab.Screen: Componente que define una pestaña en la navegación.
+
+  Uso:
+    - Este componente se utiliza como la navegación principal de la aplicación.
+*/
+
 import React from "react";
 import { Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";

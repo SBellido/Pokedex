@@ -1,3 +1,31 @@
+/*
+  Este componente representa la sección de datos del usuario.
+  Muestra información personal del usuario autenticado, como su nombre, username, email y la cantidad de pokemons favoritos.
+
+  Props:
+    - Ninguna.
+
+  Estado:
+    - total: Un estado que guarda el número total de pokemons favoritos del usuario.
+
+  Hooks:
+    - useFocusEffect: Utilizado para ejecutar una función cuando el componente obtiene el foco.
+                      Se utiliza para actualizar el número total de pokemons favoritos del usuario.
+                      Se utiliza el hook useCallback para evitar que la función de efecto se cree en cada renderizado.
+    - useEffect: Utilizado para realizar una solicitud asincrónica para obtener los pokemons favoritos del usuario cuando el componente se monta.
+                  Actualiza el estado total con el tamaño de la respuesta.
+                  Maneja el caso de error estableciendo el total en 0.
+
+  Componentes:
+    - ItemMenu: Un componente funcional que muestra un título y un texto en una fila.
+
+  Métodos:
+    - Ninguno.
+
+  Uso:
+    - Este componente se utiliza en la pantalla de perfil del usuario.
+*/
+
 import React, { useCallback, useEffect, useState } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
